@@ -1,0 +1,4 @@
+name: health
+description: 执行全系统健康检查
+instructions: |
+  请读取并严格遵循 `shared/commands/health.md` 中的指令。

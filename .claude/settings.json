@@ -1,0 +1,84 @@
+{
+  "customCommands": [
+    {
+      "name": "health",
+      "prompt": "请读取并执行 shared/commands/health.md 的内容。"
+    },
+    {
+      "name": "clean",
+      "prompt": "请读取并执行 shared/commands/clean.md 的内容。"
+    },
+    {
+      "name": "log",
+      "prompt": "请读取并执行 shared/commands/log.md 的内容。"
+    },
+    {
+      "name": "brew_backup",
+      "prompt": "请读取并执行 shared/commands/brew_backup.md 的内容。"
+    },
+    {
+      "name": "update",
+      "prompt": "请读取并执行 shared/commands/update.md 的内容。"
+    },
+    {
+      "name": "install",
+      "prompt": "请读取并执行 shared/commands/install.md 的内容。"
+    },
+    {
+      "name": "panic",
+      "prompt": "请读取并执行 shared/commands/panic.md 的内容。"
+    },
+    {
+      "name": "doctor",
+      "prompt": "请读取并执行 shared/commands/doctor.md 的内容。"
+    },
+    {
+      "name": "memo",
+      "prompt": "请读取并执行 shared/commands/memo.md 的内容。"
+    }
+  ],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash shared/bin/safe-wrapper.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash shared/bin/safe-wrapper.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SAFE_WRAPPER_ACTION='SessionStart housekeeping' SAFE_WRAPPER_REASON='初始化日志目录并清理 30 天前日志' SAFE_WRAPPER_ROLLBACK='n/a' bash shared/bin/safe-wrapper.sh \"find logs/ -name '*.md' -type f -mtime +30 -delete\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SAFE_WRAPPER_ACTION='SessionStop notification' SAFE_WRAPPER_REASON='发送 Claude Code 完成通知' SAFE_WRAPPER_ROLLBACK='n/a' bash shared/bin/safe-wrapper.sh \"command -v osascript >/dev/null 2>&1 && osascript -e 'display notification \\\"Claude Code task finished\\\" with title \\\"Claude Code\\\"' || true\""
+          }
+        ]
+      }
+    ]
+  }
+}

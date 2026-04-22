@@ -1,0 +1,4 @@
+name: memo
+description: 记录重要知识点或操作结论到 sops 中
+instructions: |
+  请读取并严格遵循 `shared/commands/memo.md` 中的指令。

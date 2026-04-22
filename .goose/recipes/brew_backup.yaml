@@ -1,0 +1,4 @@
+name: brew_backup
+description: 进行手动全量备份 Brewfile
+instructions: |
+  请读取并严格遵循 `shared/commands/brew_backup.md` 中的指令。

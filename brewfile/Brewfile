@@ -1,0 +1,39 @@
+tap "jundot/omlx", "https://github.com/jundot/omlx"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# GitHub command-line tool
+brew "gh"
+# Google Suite CLI
+brew "gogcli"
+# Access large language models from the command-line
+brew "llm"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# LLM inference server optimized for Apple Silicon
+brew "jundot/omlx/omlx"
+# Open source, extensible AI agent that goes beyond code suggestions
+cask "block-goose"
+# Ghostty-based terminal with vertical tabs and notifications for AI coding agents
+cask "cmux"
+cask "font-alegreya"
+cask "font-crimson-pro"
+cask "font-hack-nerd-font"
+cask "font-sf-mono"
+# Tool for multi-language users
+cask "input-source-pro"
+# Open-source download manager
+cask "motrix"
+# AI coding agent desktop client
+cask "opencode-desktop"
+# Rust-based terminal
+cask "warp"
+# Multiplayer code editor
+cask "zed"

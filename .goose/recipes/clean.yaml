@@ -1,0 +1,4 @@
+name: clean
+description: 执行深度清理与卸载审计
+instructions: |
+  请读取并严格遵循 `shared/commands/clean.md` 中的指令。

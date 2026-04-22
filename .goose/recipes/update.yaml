@@ -1,0 +1,4 @@
+name: update
+description: 更新系统软件包
+instructions: |
+  请读取并严格遵循 `shared/commands/update.md` 中的指令。

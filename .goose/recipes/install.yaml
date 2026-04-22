@@ -1,0 +1,4 @@
+name: install
+description: 处理软件安装
+instructions: |
+  请读取并严格遵循 `shared/commands/install.md` 中的指令。

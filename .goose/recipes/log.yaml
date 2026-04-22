@@ -1,0 +1,4 @@
+name: log
+description: 总结今天对系统做过的所有变更
+instructions: |
+  请读取并严格遵循 `shared/commands/log.md` 中的指令。
