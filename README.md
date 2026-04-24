@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS-lightgrey.svg?logo=apple)](https://www.apple.com/macos/)
-[![Agents: Claude | Goose | Pi](https://img.shields.io/badge/Agents-Claude%20%7C%20Goose%20%7C%20Pi-orange.svg)](https://github.com/williamwang-ty/workspace-sysadmin)
+[![Agents: Claude | Goose | Pi | Codex](https://img.shields.io/badge/Agents-Claude%20%7C%20Goose%20%7C%20Pi%20%7C%20Codex-orange.svg)](https://github.com/williamwang-ty/workspace-sysadmin)
 
 > **Transform your AI Agents into professional macOS SREs.** 
 > A centralized, platform-agnostic operational framework designed to maximize logic reuse across different AI runtimes while enforcing strict safety guardrails.
@@ -19,16 +19,18 @@ graph TD
         C[Claude Code]
         G[Goose]
         P[Pi]
+        X[Codex]
     end
 
     subgraph "Adaptation Layer"
         C -->|settings.json / symlinks| AC[.claude/]
         G -->|.goosehints / recipes| AG[.goose/]
         P -->|AGENTS.md / symlinks| AP[.pi/]
+        X -->|AGENTS.md / wrapper / symlinks| AX[.agents/]
     end
 
     subgraph "Core Assets (SSOT)"
-        AC & AG & AP --> Shared((shared/))
+        AC & AG & AP & AX --> Shared((shared/))
         
         Shared --> R[rules/]
         Shared --> S[skills/]
@@ -52,6 +54,7 @@ Native support for the top AI coding and ops agents. Write your SOP (Standard Op
 - **Claude Code**: Full integration with `PreToolUse` hooks and native subagent isolation.
 - **Goose**: Lightweight bridging via `.goosehints` and YAML recipes.
 - **Pi**: Context-engineered prompts with local skill discovery.
+- **Codex**: Native `AGENTS.md` + `.agents/skills/` auto-scan; shell access is governed by explicit `safe-wrapper.sh` usage. Lifecycle hooks are reserved as an optional future enhancement after validation.
 
 ### 🛡️ 2. Dual-Layer Safety System
 - **Soft Defense**: Global `safety-rules.md` injected into system prompts to define cognitive boundaries.
@@ -93,6 +96,7 @@ bash shared/bin/doctor-check.sh
 - **Claude Code**: Automatically recognizes `CLAUDE.md`. Symlinks are pre-configured in `.claude/`.
 - **Goose**: Uses `.goosehints` for routing.
 - **Pi**: Uses `AGENTS.md` for system instructions.
+- **Codex**: Uses `AGENTS.md` + auto-scans `.agents/skills/`; hooks are not enabled by default.
 
 ---
 
