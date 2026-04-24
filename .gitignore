@@ -1,7 +1,48 @@
-.DS_Store
-.cursor/
-.vscode/
-node_modules/
-*.log
-.gemini/
+# ─────────────────────────────────────────
+# Logs & Audit Trails (runtime, not versioned)
+# ─────────────────────────────────────────
 logs/
+*.log
+*.audit.md
+*.audit.json
+
+# ─────────────────────────────────────────
+# Memory / State Files
+# ─────────────────────────────────────────
+memory/
+*.memory
+memory.json
+memory.md
+*.mem.json
+
+# ─────────────────────────────────────────
+# macOS System Files
+# ─────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ─────────────────────────────────────────
+# Editor & IDE
+# ─────────────────────────────────────────
+.vscode/
+.cursor/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─────────────────────────────────────────
+# AI / Dev Tool Caches
+# ─────────────────────────────────────────
+.gemini/
+node_modules/
+
+# ─────────────────────────────────────────
+# Environment & Secrets
+# ─────────────────────────────────────────
+.env
+.env.*
+*.secret
+secrets/
